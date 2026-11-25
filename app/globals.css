@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+/* Dark mode follows a `dark` class on <html>, set before paint. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Deaku UI style guide: zinc neutrals, one Stargate accent for the single
+   active thing, secondary colours for meaning only. Surfaces separate by
+   background contrast, not borders. */
+@theme {
+  --color-zinc-750: #2c2b30;
+  --color-zinc-850: #202024;
+  --color-stargate: #796eff;
+  --color-stargate-400: #9d8eff;
+
+  /* Secondary palette, from the guide. */
+  --color-red-400: #fc6b73;
+  --color-red-500: #fb2b37;
+  --color-red-600: #bc2029;
+  --color-amber-400: #fdb84d;
+  --color-amber-500: #fc9900;
+  --color-amber-600: #bd7300;
+  --color-green-400: #4cd985;
+  --color-green-500: #00c950;
+  --color-green-600: #00973c;
+  --color-blue-400: #6ba5ff;
+  --color-blue-500: #2b7fff;
+  --color-blue-600: #205fbf;
+}
+
+:root {
+  --page: var(--color-zinc-50); /* content background, as in the app */
+  --panel: #ffffff; /* primary surface */
+  --surface: var(--color-zinc-100); /* secondary surface */
+  --surface-2: var(--color-zinc-200); /* tertiary surface */
+  --hover: var(--color-zinc-200);
+  --ink: var(--color-zinc-800); /* primary text */
+  --ink-2: var(--color-zinc-600); /* body text */
+  --muted: var(--color-zinc-500); /* muted text, idle icons */
+  --faint: var(--color-zinc-400);
+  --line: var(--color-zinc-200);
+  --bar: var(--color-zinc-800);
+  --bar-partial: var(--color-zinc-500);
+  --button: var(--color-zinc-800);
+  --button-ink: #ffffff;
+
+  --good: var(--color-green-600);
+  --bad: var(--color-red-600);
+  --warn: var(--color-amber-600);
+}
+
+.dark {
+  --page: var(--color-zinc-950);
+  --panel: var(--color-zinc-900);
+  --surface: var(--color-zinc-800);
+  --surface-2: var(--color-zinc-750);
+  --hover: var(--color-zinc-700);
+  --ink: #ffffff;
+  --ink-2: var(--color-zinc-300);
+  --muted: var(--color-zinc-400);
+  --faint: var(--color-zinc-500);
+  --line: var(--color-zinc-800);
+  --bar: var(--color-zinc-100);
+  --bar-partial: var(--color-zinc-400);
+  --button: var(--color-zinc-100);
+  --button-ink: var(--color-zinc-900);
+
+  --good: var(--color-green-400);
+  --bad: var(--color-red-400);
+  --warn: var(--color-amber-400);
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-panel: var(--panel);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-hover: var(--hover);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-bar: var(--bar);
+  --color-bar-partial: var(--bar-partial);
+  --color-button: var(--button);
+  --color-button-ink: var(--button-ink);
+  --color-good: var(--good);
+  --color-bad: var(--bad);
+  --color-warn: var(--warn);
+  --font-sans: var(--font-roboto);
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Focus rings use the accent. */
+:focus-visible {
+  outline: 2px solid var(--color-stargate);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

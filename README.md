@@ -6,7 +6,7 @@ This repository is a **from-scratch rebuild on invented data**. The design is mi
 
 ![The Overview tab: four outcome tiles for revenue, sign-ups, paying customers and collaborating workspaces, each with a target and a status. Invented data.](.github/overview.jpg)
 
-- **Live demo:** [growth-dashboard-demo.vercel.app](https://growth-dashboard-demo.vercel.app)
+- **Live demo:** [growth-dashboard-demo-two.vercel.app](https://growth-dashboard-demo-two.vercel.app)
 - **Case study:** [alinakabanets.com/work/deaku-kpi-tree](https://alinakabanets.com/work/deaku-kpi-tree), on how the six numbers were chosen, from a revenue goal down to design metrics, and why this screen exists
 
 ## The problem it solves
